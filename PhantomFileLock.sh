@@ -1,4 +1,4 @@
-#/bin/sh
+#/bin/bash
 
 for file in /home/**/*; do
     if [ -f "$file" ]; then #checks the item is a file, and not a directory
